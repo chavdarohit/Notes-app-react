@@ -9,6 +9,25 @@
         border-radius: 30px;
 
 }
+.note_footer img{
+    height: 25px;
+    width: 25px;
+    cursor: pointer; 
+    /* cursor shows the finger point on img */
+    opacity: 0;
+}
+
+
+.note_footer{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.note:hover .note_footer img{
+    opacity: 1;
+    transition: 300ms;
+    
+}
 .note_text
 {
     flex:1;
