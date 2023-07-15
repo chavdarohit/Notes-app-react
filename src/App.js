@@ -33,36 +33,39 @@ function App() {
 
     if (index < 0) return //if the index not found
 
-    tempNotes.splice(index, 1); //deleting the value (starting index, no of index to delete)
-    setNotes(tempNotes); //pushing new array to notes after deleting
+    let confirm = window.confirm("Are you sure want to Delete Note ?") //Confirm box for asking user to delete
+    if (confirm == true) {
+      tempNotes.splice(index, 1); //deleting the value (starting index, no of index to delete)
+      setNotes(tempNotes); //pushing new array to notes after deleting
+    }
   }
 
 
   //the notes having the saved data in it we are extracting data from that and setting it to existing node with ID
-const updateText=(text,id)=>{ //updating the text after refresh
+  const updateText = (text, id) => { //updating the text after refresh
 
-  const tempNotes = [...notes] //making copy of notes array
+    const tempNotes = [...notes] //making copy of notes array
 
-  const index = tempNotes.findIndex(item => item.id === id)  //checking argument id with array's id which is item.id using arrow function
+    const index = tempNotes.findIndex(item => item.id === id)  //checking argument id with array's id which is item.id using arrow function
 
-  if (index < 0) return //if the index not found
+    if (index < 0) return //if the index not found
 
-  tempNotes[index].text = text;
-  setNotes(tempNotes)
-}
+    tempNotes[index].text = text;
+    setNotes(tempNotes)
+  }
 
- //the notes having the saved data in it we are extracting data from that and setting it to existing node with ID
-const updateTitle=(title,id)=>{ //updating the title after refreshing
+  //the notes having the saved data in it we are extracting data from that and setting it to existing node with ID
+  const updateTitle = (title, id) => { //updating the title after refreshing
 
-  const tempNotes = [...notes] //making copy of notes array
+    const tempNotes = [...notes] //making copy of notes array
 
-  const index = tempNotes.findIndex(item => item.id === id)  //checking argument id with array's id which is item.id using arrow function
+    const index = tempNotes.findIndex(item => item.id === id)  //checking argument id with array's id which is item.id using arrow function
 
-  if (index < 0) return //if the index not found
+    if (index < 0) return //if the index not found
 
-  tempNotes[index].title = title;
-  setNotes(tempNotes)
-}
+    tempNotes[index].title = title;
+    setNotes(tempNotes)
+  }
 
 
 
@@ -74,7 +77,7 @@ const updateTitle=(title,id)=>{ //updating the title after refreshing
     <div className="App">
       <Sidebar addNote={addNote} />
       {/* passed addnote as a props to the sidebar and sidebar is imported or included here */}
-      <NoteContainer notes={notes} deleteNote={deleteNote} updateText={updateText} updateTitle={updateTitle}/>
+      <NoteContainer notes={notes} deleteNote={deleteNote} updateText={updateText} updateTitle={updateTitle} />
       {/* passed notes and deletenote as a props to NoteContainer and notecontainer is imported or included here */}
     </div>
   );
