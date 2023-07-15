@@ -12,7 +12,7 @@ function App() {
   );
 
 
-  const addNote = (color) => { //adding the new notes
+  const addNote = function (color) { //adding the new notes
     const tempNotes = [...notes] //making temporary new array by copying the notes array
 
     tempNotes.push({
@@ -28,7 +28,7 @@ function App() {
 
     const tempNotes = [...notes] //making copy of notes array
 
-    const index = tempNotes.findIndex(item => item.id == id)  //checking argument id with array's id which is item.id using arrow function
+    const index = tempNotes.findIndex(item => item.id === id)  //checking argument id with array's id which is item.id using arrow function
 
     if (index < 0) return //if the index not found
 
