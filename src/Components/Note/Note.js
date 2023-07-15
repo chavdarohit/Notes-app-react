@@ -4,6 +4,7 @@ import deleteIcon from '../../assets/delete.png';
 import './Note.css';
 
 
+// let timer = 500, timeout
 function Note(props) { // the props will recieved from the notecontainer
 
     const formatDate = (value) => { //created to format the notes
@@ -23,9 +24,37 @@ function Note(props) { // the props will recieved from the notecontainer
 
     }
 
+    // const debounce = (func) => { //when this is done it will wait for 500ms and then perform tasks
+    //                                 //debouncing is used to dealy a function in react 
+    //     clearTimeout(timeout) //clear will clear the existing time
+    //     timeout = setTimeout(func, timer); //it will set new timeout which is 500 here
+
+    //     //the function which is passed will be call after given debounce
+    // }
+
+    const updateText = (text, id) => {
+        // debounce(() => props.updateText(text, id)) //this will call the function written in app.js of updatetext
+            props.updateText(text,id);
+    }
+
+    const updateTitle =(title, id) => {
+        // debounce(() => props.updateTitle(title, id)) //this will call the function written in app.js of updatetext
+            props.updateTitle(title,id);
+    }
+
     return (
         <div className="note" style={{ backgroundColor: props.note.color }}>
-            <textarea className="note_text" placeholder='Add Note Here' defaultValue={props.note.text}></textarea>
+            <textarea className='note_title'
+                onChange={(event) => updateTitle(event.target.value, props.note.id)} //event target pointing current tag for here title
+                placeholder='Title' maxLength={15} defaultValue={props.note.title}>
+            </textarea>
+            <hr></hr>
+
+            <textarea className="note_text custom-scroll" placeholder='Add Note Here'
+                onChange={(event) => updateText(event.target.value, props.note.id)} //onchange activity called when the text is changed everytime
+                defaultValue={props.note.text}></textarea>
+
+
             <div className='note_footer'>
                 <p>{formatDate(props.note.time)}</p>
                 <img

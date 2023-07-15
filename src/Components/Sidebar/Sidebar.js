@@ -6,6 +6,11 @@ function Sidebar(props) { //here the props will be recieved from the app which i
 
     const color = ["#f29b72", "#fec971", "#00d4fe", "#b693fd", "#e4ee91"];
 
+    /*
+* Created with https://www.css-gradient.com
+* Gradient link: https://www.css-gradient.com/?c1=84516c&c2=35e7a7&gt=l&gd=dtl
+*/
+
     const [listOpen, setListOpen] = useState(false); //use state for setting anf updating array of notes
 
     return (

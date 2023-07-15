@@ -7,6 +7,7 @@
         flex-direction: column;
         background-color: blueviolet;
         border-radius: 30px;
+        box-shadow: 3px 3px 5px 6px #ccc;
 
 }
 .note_footer img{
@@ -34,6 +35,16 @@
     resize: none;
     background-color: transparent;
     font-size: 1rem;
+    list-style: 1.875rem;
+    outline: none;
+    border: none;
+}
+
+.note_title
+{
+    resize: none;
+    background-color: transparent;
+    font-size: 2em;
     list-style: 1.875rem;
     outline: none;
     border: none;

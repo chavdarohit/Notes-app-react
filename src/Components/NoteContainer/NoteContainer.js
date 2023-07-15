@@ -27,6 +27,8 @@ function NoteContainer(props) { //the props will recieve from app notes and dele
                                 key={item.id} //unique id for note
                                 note={item}
                                 deleteNote={props.deleteNote}
+                                updateText={props.updateText}
+                                updateTitle={props.updateTitle}
                             // passing text,color,time to notes as arfuments
                             />) : <h3>No Notes Present</h3> //if no notes are there then show this
 
