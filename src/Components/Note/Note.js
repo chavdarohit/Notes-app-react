@@ -48,7 +48,7 @@ function Note(props) { // the props will recieved from the notecontainer
                 onChange={(event) => updateTitle(event.target.value, props.note.id)} //event target pointing current tag for here title
                 placeholder='Title' maxLength={15} defaultValue={props.note.title}>
             </textarea>
-            <hr></hr>
+            
 
             <textarea className="note_text custom-scroll" placeholder='Add Note Here'
                 onChange={(event) => updateText(event.target.value, props.note.id)} //onchange activity called when the text is changed everytime
