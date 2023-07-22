@@ -32,26 +32,27 @@ function Note(props) { // the props will recieved from the notecontainer
     //     //the function which is passed will be call after given debounce
     // }
 
-    const updateText = (text, id) => {
-        // debounce(() => props.updateText(text, id)) //this will call the function written in app.js of updatetext
-            props.updateText(text,id);
-    }
+    // const updateText = (text, id) => {
+    
+    // debounce(() => props.updateText(text, id)) //this will call the function written in app.js of updatetext
+    //         props.updateText(text,id);
+    // }
 
-    const updateTitle =(title, id) => {
-        // debounce(() => props.updateTitle(title, id)) //this will call the function written in app.js of updatetext
-            props.updateTitle(title,id);
-    }
+    // const updateTitle =(title, id) => {
+         // debounce(() => props.updateTitle(title, id)) //this will call the function written in app.js of updatetext
+    //         props.updateTitle(title,id);
+    // }
 
     return (
         <div className="note" style={{ backgroundColor: props.note.color }}>
             <textarea className='note_title'
-                onChange={(event) => updateTitle(event.target.value, props.note.id)} //event target pointing current tag for here title
+                onChange={(event) => props.updateTitle(event.target.value, props.note.id)} //event target pointing current tag for here title
                 placeholder='Title' maxLength={15} defaultValue={props.note.title}>
             </textarea>
             
 
             <textarea className="note_text custom-scroll" placeholder='Add Note Here'
-                onChange={(event) => updateText(event.target.value, props.note.id)} //onchange activity called when the text is changed everytime
+                onChange={(event) => props.updateText(event.target.value, props.note.id)} //onchange activity called when the text is changed everytime
                 defaultValue={props.note.text}></textarea>
 
 

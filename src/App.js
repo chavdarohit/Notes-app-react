@@ -41,6 +41,7 @@ function App() {
   }
 
 
+  
   //the notes having the saved data in it we are extracting data from that and setting it to existing node with ID
   const updateText = (text, id) => { //updating the text after refresh
 
